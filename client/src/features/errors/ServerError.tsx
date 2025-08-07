@@ -4,7 +4,6 @@ import { useLocation } from "react-router"
 export default function ServerError() {
     const {state} = useLocation();
 
-
     return (
         <Paper>
             {state.error ? (

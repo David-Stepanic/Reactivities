@@ -1,5 +1,11 @@
-import { format, type DateArg } from "date-fns";
+import { format } from 'date-fns';
 
-export function formatDate(date: DateArg<Date>){
-    return format(date, 'dd MMM yyyy h:mm a');
+export function formatDate(date: string | number | Date) {
+    const parsedDate = new Date(date);
+
+    if (isNaN(parsedDate.getTime())) {
+    return "Invalid date";
+    }
+
+    return format(parsedDate, 'dd MMM yyyy h:mm a');
 }
